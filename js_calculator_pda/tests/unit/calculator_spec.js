@@ -68,8 +68,20 @@ describe('calculator', function () {
     calculator.clearClick()
     assert.equal(calculator.runningTotal,0)
   })
-
-
+  it ("should should concatenate numbers", function(){
+    calculator.numberClick(1)
+    calculator.numberClick(4)
+    assert.equal(calculator.runningTotal,14)
+  })
+  it ("can chain muliple operations", function(){
+    calculator.numberClick(1)
+    calculator.operatorClick('+')
+    calculator.numberClick(4)
+    calculator.operatorClick('-')
+    calculator.numberClick(2)
+    calculator.operatorClick('=')
+    assert.equal(calculator.runningTotal,3)
+  })
 
 
 });
